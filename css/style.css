@@ -1,0 +1,438 @@
+/********** Reset *********/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+}
+
+/********** Style général *********/
+h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    color: #002a59;
+    border-bottom: 1px solid #002a59;
+    padding-bottom: 20px;
+}
+h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    color: #00c0d4;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    list-style-type: none;
+}
+
+a.button {
+    padding: 8px 16px;
+    height: 50px;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+}
+.button {
+    background-color: #002a59;
+    border-radius: 10px;
+}
+.button:hover {
+    color: #00c0d4;
+}
+
+/********* HEADER *********/
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: #00c0d4;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 2;
+}
+.header-fixed {
+    height: 80px;
+    width: 100%;  
+}
+header nav {
+    width: -moz-fit-content;
+    width: fit-content;
+}
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+header nav ul li a {
+    padding: 8px 16px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+}
+header nav ul li a:hover {
+    padding: 8px 16px;
+    color: #002a59;
+    border-radius: 10px;
+}
+
+/********* MAIN *********/
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+main {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+main section {
+    margin-bottom: 40px;
+}
+
+/********* TABLEAUX *********/
+table {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-spacing: 0;
+}
+table tr {
+    height: 30px;
+}
+th {
+    background-color: #002a59;
+    color: white;
+}
+th.action {
+    background-color: white;
+}
+tbody {
+    background-color: #d8f7fc;
+}
+tr:nth-child(2n) {
+    background-color: #d8eaff;
+}
+td {
+    padding: 8px;
+}
+td.important {
+    font-weight: 700;
+    color: #002a59;
+}
+
+/********* FORMULAIRE *********/
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+form label {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+form input {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 30px;
+    padding-left: 10px;
+}
+form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 100px;
+    padding-left: 10px;
+}
+form input[type=submit] {
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 30px;
+    padding: 0;
+    background-color: #002a59;
+    color: white;
+    border-style: solid;
+    cursor:pointer;
+}
+.required {
+    color: red;
+}
+
+/********* FLEXBOX *********/
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-center {
+    justify-content: center;
+}
+.align-center {
+    align-items: center;
+}
+
+/********* LARGEUR *********/
+.w45 {
+    width: 45%;
+}
+.w100 {
+    width: 100%;
+}
+
+/********* ERREUR *********/
+.erreur {
+    width: 100%;
+    background-color: rgb(252, 194, 194);
+    color: red;
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+/********** Page de connexion *********/
+.connexion {
+    height: 100vh;
+    flex-direction: column;
+}
+.connexion>* {
+    width: 40%;
+}
+.connexion>div {
+    background-color: #00c0d4;
+    color: #002a59;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/********** PAGE DES MESSAGES **********/
+.action-conversation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.new-message {
+    position: fixed;
+    bottom:0;
+    left:0;
+    background-color: #bcdbff;
+    border: 1px solid #002a59;
+    z-index: 2;
+    margin: 0;
+}
+.new-message form {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.new-message textarea {
+    width:75%;
+    height: 50px;
+}
+.new-message input[type=submit] {
+    width:20%;
+    margin: 20px auto;
+}
+.message-fixed {
+    height: 50px;
+    width: 100%;
+}
+
+
+
+
+
+
+form.inscription {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 30px;
+}
+
+form.inscription {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+form.inscription label {
+    margin-bottom: 10px;
+}
+
+form.inscription input, select {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+form.inscription input[type=checkbox] {
+    width: fit-content;
+    height: fit-content;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+form.inscription input[type=submit] {
+    width: 50%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    height: 30px;
+    padding: 0;
+}
+
+fieldset {
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+legend {
+    padding: 0 10px;
+}
+
+nav.sous-menu {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+nav.sous-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+nav.sous-menu ul li a {
+    padding: 8px 16px;
+    background-color: yellowgreen;
+    border-radius: 10px;
+}
+
+nav.sous-menu ul li a:hover {
+    padding: 8px 16px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+}
+
+.infos p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-message {
+    padding: 8px 16px;
+    background-color: rgb(124, 170, 255);
+    border-radius: 10px;
+}
+
+.btn-message:hover {
+    background-color: rgb(58, 61, 255);
+    color: white;
+}
+
+
+.msg-pastille-alerte {
+    background-color: #002a59;
+    color: white;
+    font-weight: 700;
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.conversation {
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid black;
+    background-color: rgb(240, 240, 240);
+    padding : 20px;
+    border-radius: 10px;
+}
+
+.conversation>div {
+    width: 80%;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+.conversation>div a {
+    font-weight: 700;
+}
+
+.envoye {
+    align-self: flex-end;
+    background-color: rgb(98, 192, 98);
+}
+
+.recu {
+    align-self: flex-start;
+    background-color: rgb(167, 213, 243);
+}
+
+.fixed {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.date-message {
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+
+form.recherche {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+form.recherche input {
+    width: 250px;
+    height: 20px;
+    margin: 0;
+}
+form.recherche select {
+    width: 250px;
+    height: 20px;
+    margin: 0;
+}
+form.recherche label {
+    margin: 0;
+}
+form.recherche input[type=submit] {
+    width: fit-content;
+}

@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Template du formulaire de modification d'un profil artiste
+ * Paramètres :
+ *      $objArtiste - Objet de l'artiste à modifier
+ */
+
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier votre profil artiste</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <?php
+        include_once("templates/fragments/menu.php");
+    ?>
+    <main>
+        <section class="flex justify-center">
+            <h1>Modifier mon profil artiste</h1>
+            <!-- Formulaire de modification d'un artiste -->
+            <form action="modifier_artiste.php?idArtiste=<?= $objArtiste->id() ?>" method="post" class="crea-artiste">
+                <div class="w100">
+                    <label for="nom_scene">Nom de scène :</label>
+                    <input type="text" name="nom_scene" id="nom_scene" value="<?= $objArtiste->get("nom_scene") ?>" required>
+                </div>
+                <div class="w100">
+                    <label for="presentation">Votre présentation :</label>
+                    <textarea name="presentation" id="presentation" required><?= $objArtiste->get("presentation") ?></textarea>
+                </div>
+                <div class="w100">
+                    <label for="description_musique">Brève description de votre musique :</label>
+                    <input type="text" name="description_musique" id="description_musique" value="<?= $objArtiste->get("description_musique") ?>" required>
+                </div>
+                <div class="w100">
+                    <label for="type_musique">Type de musique :</label>
+                    <input type="text" name="type_musique" id="type_musique" value="<?= $objArtiste->get("type_musique") ?>" required>
+                </div>
+                <input type="submit" value="Mettre à jour">
+            </form>
+            <?php
+            //Message d'erreur de traitement du formulaire
+            if(isset($boolResultat) && $boolResultat === false) {
+            ?>
+                <div class="erreur">
+                    <?= $strErreur ?>
+                </div>
+            <?php
+            }
+            ?>
+        </section>
+    </main>
+</body>
+</html>
