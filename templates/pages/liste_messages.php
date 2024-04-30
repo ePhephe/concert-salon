@@ -33,14 +33,15 @@
     <?php } ?>
             <a class="button" href="changer_statut_message.php?idConversation=<?= $objConversation->id() ?>&statut=L">Tout marquer lu</a>
             <a class="button" href="changer_statut_message.php?idConversation=<?= $objConversation->id() ?>&statut=NL">Tout marquer non-lu</a>
+            <a class="button" href="epingler_conversation.php?idConversation=<?= $objConversation->id() ?>">Epingler</a>
         </section>
         <section class="new-message w100">
-            <form action="creer_message.php?idConversation=<?= $objConversation->id() ?>" method="post">
+            <form action="creer_message.php?idConversation=<?= $objConversation->id() ?>" method="post" id="formNewMessage">
                 <textarea name="contenu" id="contenu" required></textarea>
                 <input type="submit" value="Envoyer un nouveau message">
             </form>
         </section>
-        <section class="flex conversation w100">
+        <section class="flex conversation w100" id="conversationMessages">
                 <?php foreach ($arrayMessages as $id => $message) { ?>
                     
                     <div class="message <?= ($message->get("compte_destinataire")->id()===$objCompte->id())?"recu":"envoye" ?>" id="message<?= $message->id() ?>">
@@ -59,5 +60,16 @@
         <div class="message-fixed">
 
         </div>
+        <?php
+            include_once("templates/fragments/alerte_messages.php");
+        ?>
+    </main>
+        <?php
+            include_once("templates/fragments/scripts.php");
+        ?>
+    <script>
+        let idConversation = <?= $objConversation->id() ?>;
+    </script>
+    <script src="js/conversation.js"></script>
 </body>
 </html>

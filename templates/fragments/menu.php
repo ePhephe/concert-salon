@@ -35,7 +35,7 @@
                 <a href="afficher_profil_organisateur.php?idCompte=<?= $objCompte->id() ?>">Profil Organisateur</a>
             </li>
             <li>
-                <a href="lister_conversations.php">Messagerie <?php if($objCompte->nbMessageNonlu() > 0) { ?><div class="msg-pastille-alerte"><?= $objCompte->nbMessageNonlu() ?></div><?php } ?></a>
+                <a href="lister_conversations.php">Messagerie <div class="msg-pastille-alerte" id="nouveauMessage"><?= $objCompte->nbMessageNonlu() ?></div></a>
             </li>
             <?php
             }

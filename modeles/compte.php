@@ -263,4 +263,42 @@ class compte extends _model {
         }
     }
 
+    /**
+     * Indique le nombre de messages nouveaux sur le compte et les passent en non-lus
+     *
+     * @param integer $idConversation (facultatif) Identifiant d'une conversation
+     * @return integer - Nombre de nouveaux messages
+     */
+    function nbMessageNouveau($idConversation = null){
+        //On instancie un objet message
+        $objMessage = new message();
+
+        //On construit les paramètres
+        $arrayParam = [
+            ["champ"=>"compte_destinataire","valeur"=>$this->id,"operateur"=>"="],
+            ["champ"=>"statut_message","valeur"=>"N","operateur"=>"="]
+        ];
+        //Si on a une conversation, on ajouter le paramètre
+        if(! is_null($idConversation)){
+            $arrayParam[] = ["champ"=>"conversation","valeur"=>$idConversation,"operateur"=>"="];
+        }
+
+        //On récupère la liste des messages avec le paramètre du statut non-lu et le compte en destinataire
+        $arrayMessages = $objMessage->list($arrayParam);
+
+        if($arrayMessages === false){
+            $nbMessage = 0;
+        }
+        else {
+            $nbMessage = count($arrayMessages);
+            foreach ($arrayMessages as $id => $message) {
+                $objMessageModif = new message($id);
+                $objMessageModif->set("statut_message","NL");
+                $objMessageModif->update();
+            }
+        }
+
+        return $nbMessage;
+    }
+
 }

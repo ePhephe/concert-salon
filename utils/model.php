@@ -384,7 +384,7 @@ class _model {
             $arrayTri = [];
             foreach ($arrayCriteresTri as $critere => $sens) {
                 if(array_key_exists($critere,$this->fields))
-                    $arrayTri[] = "$critere $sens";
+                    $arrayTri[] = "`$critere` $sens";
             }
         }
         $arrayTri[] = "`id` desc";
@@ -399,6 +399,8 @@ class _model {
         global $bdd;
         $req = $bdd->prepare($strRequete);
 
+        //var_dump($strRequete);
+
         //On exécute la requête avec ses paramètres et on gère les erreurs
         if ( ! $req->execute($arrayParam)) { 
             var_dump($strRequete);
@@ -411,7 +413,6 @@ class _model {
         if (empty($arrayResultats)) {
             return false;
         }
-
 
         // construire le tableau à retourner :
         // Pour chaque élément de $liste, fabriquer un objet contact que l'on met dans le tableau final

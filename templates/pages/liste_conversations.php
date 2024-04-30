@@ -82,13 +82,19 @@
                         <td><?= date("d/m/Y H:m",strtotime($conversation->get("date_conversation"))) ?></td>
                         <td><?= ($conversation->get("statut_conversation") === "O")? "Ouverte" : "Archivée" ?></td>
                         <td class="important"><?= $conversation->get("objet") ?></td>
-                        <td><a class="btn-message" href="lister_messages.php?idConversation=<?= $conversation->id() ?>"><img src="img/open_icon.png" alt="Icone ouvrir"></a></td>
+                        <td><a href="lister_messages.php?idConversation=<?= $conversation->id() ?>"><img src="img/open_icon.png" alt="Icone ouvrir"></a></td>
                     </tr>
             <?php } ?>
                 </tbody>
             </table>
         </section>
+        <?php
+            include_once("templates/fragments/alerte_messages.php");
+        ?>
     </main>
     <?php } ?>
+    <?php
+        include_once("templates/fragments/scripts.php");
+    ?>
 </body>
 </html>

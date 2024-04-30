@@ -36,16 +36,12 @@
                 include_once("templates/fragments/tableau_artistes.php");
             ?>
         </section>
+        <?php
+            include_once("templates/fragments/alerte_messages.php");
+        ?>
     </main>
     <?php
-        if(session_isconnected()){
+        include_once("templates/fragments/scripts.php");
     ?>
-    <script>
-        let idCompte = <?= $objCompte->id() ?>;
-    </script>
-    <?php
-        }
-    ?>
-    <script src="js/app.js"></script>
 </body>
 </html>

@@ -200,6 +200,11 @@ form input[type=submit] {
     width: 100%;
 }
 
+/********* UTILITAIRE **********/
+.d-none {
+    display: none;
+}
+
 /********* ERREUR *********/
 .erreur {
     width: 100%;
@@ -258,6 +263,98 @@ form input[type=submit] {
 .message-fixed {
     height: 50px;
     width: 100%;
+}
+.alert-message{
+    width: 300px;
+    height: fit-content;
+    background-color: rgb(190, 255, 190);
+    border: 2px solid green;
+    color: green;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+}
+.conversation-fixed{
+    width: 400px;
+    height: fit-content;
+    background-color: white;
+    border: 1px solid #002a59;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: fixed;
+    bottom: 0px;
+    left: 20px;
+}
+.conversation-fixed .head-conversation{
+    width: 100%;
+    height: 40px;
+    background-color: #002a59;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    position: relative;
+    cursor: pointer;
+}
+.conversation-fixed .head-conversation div{
+    position: absolute;
+    right: 20px;
+}
+.conversation-fixed .body-conversation-box{
+    width: 100%;
+}
+.conversation-fixed .body-conversation{
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.conversation-fixed .body-conversation>div {
+    width: 80%;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+}
+.conversation-fixed .body-conversation>div a {
+    font-weight: 700;
+}
+.conversation-fixed .form-conversation {
+    height: 40px;
+    width: 100%;
+}
+.conversation-fixed .form-conversation form {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.conversation-fixed .form-conversation form textarea {
+    height: 100%;
+    width: 80%;
+    margin: 0;
+    padding: 5px;
+}
+.conversation-fixed .form-conversation form input[type=submit] {
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    padding: 0;
 }
 
 

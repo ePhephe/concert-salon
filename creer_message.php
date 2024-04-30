@@ -14,6 +14,9 @@
 /**
  * Récupération des paramètres
  */
+//On initialise nos variables de tests
+$arrayErreur = [];
+$boolResultat = true;
 //On vérifie qu'on a bien l'identifiant d'une conversation en paramètre et qu'on peut envoyer un message sur cette conversation sinon on redirige vers la page de login
 if(isset($_GET["idConversation"])) {
     $idConversation = $_GET["idConversation"];
@@ -24,26 +27,23 @@ if(isset($_GET["idConversation"])) {
             $strContenu = $_POST["contenu"];
         }
         else {
-            include "templates/pages/form_login.php";
-            exit;
+            $boolResultat = false;
+            $arrayErreur[] = "Aucun message n'est présent ! ";
         }
     }
     else {
-        include "templates/pages/form_login.php";
-        exit;
+        $boolResultat = false;
+        $arrayErreur[] = "Vous n'êtes pas autorisé à envoyer de messages sur cette conversation ! ";
     }
 }
 else {
-    include "templates/pages/form_login.php";
-    exit;
+    $boolResultat = false;
+    $arrayErreur[] = "Vous n'êtes pas sur une conversation ! ";
 }
 
 /**
  * Traitements
  */
-//On initialise nos variables de tests
-$arrayErreur = [];
-$boolResultat = true;
 //On définit le destinataire en fonction de l'expéditeur
 if($objConversation->get("artiste")->get("compte")->id() === $objCompte->id())
     $idDestinataire = $objConversation->get("organisateur")->get("compte")->id();
@@ -62,19 +62,19 @@ if($boolResultat === true) {
     $objMessage->set("contenu",$strContenu);
     $objMessage->set("conversation",$objConversation->id());
     $objMessage->set("date_message",date("Y/m/d H:m:s"));
-    $objMessage->set("statut_message","NL");
+    $objMessage->set("statut_message","N");
     $objMessage->set("compte_expediteur",$objCompte->id());
     $objMessage->set("compte_destinataire",$idDestinataire);
 
     $boolResultat = $objMessage->insert();
-
-    //On va récupérer les messages de la conversation
-    $arrayMessages = $objConversation->listMessages();
 }
 
+$resultJSON = [];
+$resultJSON["resulalt"] = $boolResultat;
+$resultJSON["erreurs"] = $arrayErreur;
 
 /**
  * Affichage du template
  */
-//On affiche la page de liste des messages
-include "templates/pages/liste_messages.php";
+//On redirige vers la page de la liste des conversations
+echo json_encode($resultJSON);

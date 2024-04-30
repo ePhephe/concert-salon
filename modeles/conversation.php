@@ -52,7 +52,7 @@ class conversation extends _model {
         //On instancie un objet message
         $objMessage = new message();
         //On récupère la liste des messages pour la conversation
-        $arrayMessagesConversation = $objMessage->list([["champ"=>"conversation","valeur"=>$this->id,"operateur"=>"="]],["date_message"=>"desc"]);
+        $arrayMessagesConversation = $objMessage->list([["champ"=>"conversation","valeur"=>$this->id,"operateur"=>"="]]);
 
         return $arrayMessagesConversation;
     }

@@ -39,6 +39,12 @@
                 include "templates/fragments/tableau_concerts.php";
             ?>
         </section>
+        <?php
+            include_once("templates/fragments/alerte_messages.php");
+        ?>
     </main>
+    <?php
+        include_once("templates/fragments/scripts.php");
+    ?>
 </body>
 </html>
