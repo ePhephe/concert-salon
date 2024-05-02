@@ -25,6 +25,9 @@ if(isset($_GET["idOrganisateur"])) {
     if(isset($_GET["idArtiste"])) {
         $idArtiste = $_GET["idArtiste"];
     }
+    else {
+        $idArtiste = 0;
+    }
 }
 else {
     include "templates/pages/form_login.php";
