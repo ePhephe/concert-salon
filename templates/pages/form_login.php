@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="background-img">
+
+</div>
     <main>
         <section class="connexion flex justify-center align-center">
             <div>

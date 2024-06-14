@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
 /********** Reset *********/
 * {
     padding: 0;
@@ -10,20 +12,23 @@
 /********** Style général *********/
 h1 {
     text-align: center;
+    font-family: "Mochiy Pop One", sans-serif;
     width: 100%;
     font-size: 2rem;
-    color: #002a59;
-    border-bottom: 1px solid #002a59;
+    color: #E57373;
+    border-bottom: 1px solid #E57373;
     padding-bottom: 20px;
 }
 h2 {
     width: 100%;
+    font-family: "Mochiy Pop One", sans-serif;
     font-size: 1.5rem;
-    color: #00c0d4;
+    color: #8D6E63;
 }
 a {
     text-decoration: none;
     color: black;
+    font-family: "Mochiy Pop One", sans-serif;
 }
 ul {
     list-style-type: none;
@@ -38,15 +43,26 @@ a.button {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    color: white;
+    color: #8D6E63;
     font-size: 1.2rem;
 }
 .button {
-    background-color: #002a59;
+    background-color: #81C784;
     border-radius: 10px;
 }
 .button:hover {
-    color: #00c0d4;
+    color: #FFEBB3;
+}
+.background-img {
+    background-image: linear-gradient(90deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%), url("../img/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 /********* HEADER *********/
@@ -58,7 +74,7 @@ header {
     height: 80px;
     padding-right: 40px;
     padding-left: 40px;
-    background-color: #00c0d4;
+    background-color: #8D6E63;
     position: fixed;
     top:0;
     width: 100%;
@@ -85,12 +101,12 @@ header nav ul li a {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    color: white;
+    color: #FFEBB3;
     font-size: 1.2rem;
 }
 header nav ul li a:hover {
     padding: 8px 16px;
-    color: #002a59;
+    color: #81C784;
     border-radius: 10px;
 }
 
@@ -120,24 +136,21 @@ table tr {
     height: 30px;
 }
 th {
-    background-color: #002a59;
+    background-color: #8D6E63;
     color: white;
 }
-th.action {
-    background-color: white;
-}
 tbody {
-    background-color: #d8f7fc;
+    background-color: #ffe3e3;
 }
 tr:nth-child(2n) {
-    background-color: #d8eaff;
+    background-color: #fff4e2;
 }
 td {
     padding: 8px;
 }
 td.important {
     font-weight: 700;
-    color: #002a59;
+    color: #81C784;
 }
 
 /********* FORMULAIRE *********/
@@ -150,6 +163,7 @@ form {
 form label {
     margin-bottom: 10px;
     font-size: 1rem;
+    font-family: "Mochiy Pop One", sans-serif;
 }
 form input {
     width: 100%;
@@ -171,7 +185,7 @@ form input[type=submit] {
     margin-left: auto;
     height: 30px;
     padding: 0;
-    background-color: #002a59;
+    background-color: #E57373;
     color: white;
     border-style: solid;
     cursor:pointer;
@@ -223,12 +237,18 @@ form input[type=submit] {
     height: 100vh;
     flex-direction: column;
 }
+.connexion h1 {
+    color: #81C784;
+}
+.connexion input[type=submit] {
+    background-color: #81C784;
+}
 .connexion>* {
     width: 40%;
 }
 .connexion>div {
-    background-color: #00c0d4;
-    color: #002a59;
+    background-color: #8D6E63;
+    color: #81C784;
     padding: 20px;
     border-radius: 20px;
 }
@@ -244,7 +264,7 @@ form input[type=submit] {
     bottom:0;
     left:0;
     background-color: #bcdbff;
-    border: 1px solid #002a59;
+    border: 1px solid #E57373;
     z-index: 2;
     margin: 0;
 }
@@ -286,7 +306,7 @@ form input[type=submit] {
     width: 400px;
     height: fit-content;
     background-color: white;
-    border: 1px solid #002a59;
+    border: 1px solid #E57373;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -298,7 +318,7 @@ form input[type=submit] {
 .conversation-fixed .head-conversation{
     width: 100%;
     height: 40px;
-    background-color: #002a59;
+    background-color: #8D6E63;
     color: white;
     font-weight: 700;
     font-size: 1rem;
@@ -429,13 +449,13 @@ nav.sous-menu ul {
 
 nav.sous-menu ul li a {
     padding: 8px 16px;
-    background-color: yellowgreen;
+    background-color: #81C784;
     border-radius: 10px;
 }
 
 nav.sous-menu ul li a:hover {
     padding: 8px 16px;
-    background-color: green;
+    background-color: #81C784;
     color: white;
     border-radius: 10px;
 }
@@ -458,7 +478,7 @@ nav.sous-menu ul li a:hover {
 
 
 .msg-pastille-alerte {
-    background-color: #002a59;
+    background-color: #E57373;
     color: white;
     font-weight: 700;
     height:20px;

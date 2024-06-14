@@ -8,7 +8,9 @@
  */
 
 ?>
+<div class="background-img">
 
+</div>
 <header>
     <nav>
         <ul>
