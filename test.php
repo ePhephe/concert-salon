@@ -1,3 +1,3 @@
 <?php
 
-echo date("Y/m/d H:m:s");
+echo password_hash("athena",PASSWORD_BCRYPT);
