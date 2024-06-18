@@ -15,7 +15,7 @@ error_reporting(E_ALL);
  */
 //On ouvre la base de données et on stocke dans la variable globale $bdd
 global $bdd;
-$bdd = new PDO("mysql:host=localhost;dbname=projets_concert_mdurand;charset=UTF8","mdurand","ac2dmTM8q?M");
+$bdd = new PDO("mysql:host=localhost;dbname=XXX;charset=UTF8","XXX","XXX");
 //On paramètre les erreurs pour debugger
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
